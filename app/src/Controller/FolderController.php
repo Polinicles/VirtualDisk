@@ -5,7 +5,7 @@ namespace App\Controller;
 use App\Service\Folder\GetFolderService;
 use App\Service\View\View;
 
-require __DIR__.'/../../config/app.php';
+require __DIR__ . '/../../config/app.php';
 
 class FolderController
 {
