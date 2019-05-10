@@ -1,10 +1,40 @@
 # VirtualDisk
 
+## Quick guide
+
+### Requirements
+
+* docker https://www.docker.com/
+* docker-compose https://docs.docker.com/compose/
+
+### Get started
+
+Clone the project: 
+
+```sh
+$ git clone git@github.com:Polinicles/VirtualDisk.git
+$ cd VirtualDisk
+```
+
+### Docker
+
+Start the project
+
+```sh
+$ docker-compose up -d
+```
+
+Install dependencies
+
+```sh
+$ docker-compose exec php composer install
+```
+
 ## Approach
 
 Our approach will be creating a fake system and storing the disk in the PHP `$_SESSION` instead of using a physical disk or data stored in the database. 
 
-## Architecture
+### Architecture
 
 We'll create a similar structure than Laravel / Symfony in order to keep our files organized following the **MVC** concept.
 

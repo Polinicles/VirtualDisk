@@ -74,8 +74,8 @@
          */
         foreach ($folder->getFolders() as $folder) {
             echo '<tr>';
-            echo '<th><a href="'.$url. $folder->getName().'"'. '>'.$folder->getName().'</a></th>';
-            echo '<th><span>'.$folder->getCreatedAt().'</span></th>';
+            echo '<th><a href="'.$url. $folder->name().'"'. '>'.$folder->name().'</a></th>';
+            echo '<th><span>'.$folder->createdAt().'</span></th>';
             echo '<th>'.$checked.'</th>';
             echo '</tr>';
         }
@@ -86,8 +86,8 @@
          */
         foreach ($folder->getFiles() as $file) {
             echo '<tr>';
-            echo '<th><span>'.$file->getName().'</span></th>';
-            echo '<th><span>'.$file->getCreatedAt().'</span></th>';
+            echo '<th><span>'.$file->name().'</span></th>';
+            echo '<th><span>'.$file->createdAt().'</span></th>';
             echo '<th>'.$notChecked.'</th>';
             echo '</tr>';
         }

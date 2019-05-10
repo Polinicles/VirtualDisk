@@ -61,10 +61,10 @@ class GetFolderService
     public function findFolder(Folder $selectedFolder, $count)
     {
         // Base case: if name of the folder matches the session's selected folder, exit
-        if ($selectedFolder->getName() == $_SESSION['selectedFolder']) {
+        if ($selectedFolder->name() == $_SESSION['selectedFolder']) {
             $this->setBreadcrumb($count, [
-                $selectedFolder->getName(),
-                $selectedFolder->getCreatedAt()
+                $selectedFolder->name(),
+                $selectedFolder->createdAt()
             ]);
             $count = null; // Set counter to exit the foreach loop
             $this->setFolder($selectedFolder); // Define the right folder
@@ -73,8 +73,8 @@ class GetFolderService
 
         // Define the next breadcrumb level
         $this->setBreadcrumb($count, [
-            $selectedFolder->getName(),
-            $selectedFolder->getCreatedAt()
+            $selectedFolder->name(),
+            $selectedFolder->createdAt()
         ]);
 
         // If a folder has subfolders, run the recursive func through every inner folder

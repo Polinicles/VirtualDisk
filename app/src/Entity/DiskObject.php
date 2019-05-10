@@ -16,40 +16,23 @@ class DiskObject
      */
     public function __construct($name, $createdAt)
     {
-        $this->setName($name);
-        $this->setCreatedAt($createdAt);
+        $this->name = $name;
+        $this->createdAt = $createdAt; //TODO: pass a Value Object
     }
 
     /**
      * @return string
      */
-    public function getName() : string
+    public function name(): string
     {
         return $this->name;
     }
 
     /**
-     * @param $name
-     */
-    public function setName(string $name) : void
-    {
-        $this->name = $name;
-    }
-
-
-    /**
      * @return string
      */
-    public function getCreatedAt() : string
+    public function createdAt(): string
     {
         return $this->createdAt->format(self::DATE_FORMAT);
-    }
-
-    /**
-     * @param $createdAt
-     */
-    public function setCreatedAt(string $createdAt) : void
-    {
-        $this->createdAt = new \DateTime($createdAt);
     }
 }
