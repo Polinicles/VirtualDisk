@@ -16,7 +16,7 @@ if(!isset($_SESSION['disk'])) {
 
 /* Define the initial directory */
 if(!isset($_SESSION['selectedFolder'])) {
-    $_SESSION['selectedFolder']    = 'Home';
+    $_SESSION['selectedFolder'] = 'Home';
 }
 
 $router = new RouteCollector();

@@ -4,16 +4,14 @@ services:
   php:
     container_name: vd_docker_php
     build:
-      context: docker/php
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: docker/php/Dockerfile
     networks:
       - vd_network
     environment:
       - APP_ENV=dev
     volumes:
       - ./app:/opt/app
-      - ./docker/php/conf.d/custom-dev.ini:/usr/local/etc/php/conf.d/custom.ini
-
   nginx:
     container_name: vd_docker_nginx
     image: nginx
@@ -23,7 +21,7 @@ services:
       - 8080:80
     volumes:
       - ./app:/opt/app
-      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/nginx/conf/nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - php
 
