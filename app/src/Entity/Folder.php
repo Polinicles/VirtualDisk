@@ -12,7 +12,7 @@ class Folder extends DiskObject
      * @param $name
      * @param $createdAt
      */
-    public function __construct($name, $createdAt)
+    public function __construct(string $name, \DateTime $createdAt)
     {
         parent::__construct($name, $createdAt);
     }

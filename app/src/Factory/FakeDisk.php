@@ -23,6 +23,7 @@ class FakeDisk
      * Create a fake structure and return root folder
      *
      * @return Folder
+     * @throws \Exception
      */
     public static function createFakeDisk() : Folder
     {
@@ -55,9 +56,10 @@ class FakeDisk
     /**
      * Generate a Fake date format: YYYY-MM-DD HH:mm
      *
-     * @return string
+     * @return \DateTime
+     * @throws \Exception
      */
-    public static function generateTime() : string
+    public static function generateTime() : \DateTime
     {
         $year   = (string) rand(self::MIN_YEAR, self::MAX_YEAR);
         $month  = self::randomDate(self::MIN_MONTH, self::MAX_MONTH);
@@ -68,7 +70,7 @@ class FakeDisk
 
         $fullDate = $year.'-'.$month.'-'.$day.' '.$hour.':'.$minute.':00';
 
-        return $fullDate;
+        return new \DateTime($fullDate);
     }
 
     /**

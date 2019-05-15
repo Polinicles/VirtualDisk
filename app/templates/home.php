@@ -51,8 +51,8 @@
         /* Add parent and current folder links */
         if(count($_SESSION['breadcrumb']) > 1) {
             echo '<tr>';
-            echo '<th><a href="'.$url. $folder->getName().'"'.'>.</a></th>';
-            echo '<th><span>'.$folder->getCreatedAt().'</span></th>';
+            echo '<th><a href="'.$url. $folder->name().'"'.'>.</a></th>';
+            echo '<th><span>'.$folder->createdAt().'</span></th>';
             echo '<th>'.$checked.'</th>';
             echo '</tr>';
             echo '<tr>';
@@ -62,8 +62,8 @@
             echo '</tr>';
         } else {
             echo '<tr>';
-            echo '<th><a href="'.$url. $folder->getName().'"'.'>.</a></th>';
-            echo '<th><span>'.$folder->getCreatedAt().'</span></th>';
+            echo '<th><a href="'.$url. $folder->name().'"'.'>.</a></th>';
+            echo '<th><span>'.$folder->createdAt().'</span></th>';
             echo '<th>'.$checked.'</th>';
             echo '</tr>';
         }

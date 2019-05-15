@@ -6,7 +6,10 @@ class DiskObject
 {
     const DATE_FORMAT = 'Y-m-d H:i:s';
 
+    /** @var string */
     private $name;
+
+    /** @var \DateTime */
     private $createdAt;
 
     /**
@@ -14,10 +17,10 @@ class DiskObject
      * @param $name
      * @param $createdAt
      */
-    public function __construct($name, $createdAt)
+    public function __construct(string $name, \DateTime $createdAt)
     {
         $this->name = $name;
-        $this->createdAt = $createdAt; //TODO: pass a Value Object
+        $this->createdAt = $createdAt;
     }
 
     /**
@@ -33,6 +36,6 @@ class DiskObject
      */
     public function createdAt(): string
     {
-        return $this->createdAt->format(self::DATE_FORMAT);
+        return $this->createdAt;
     }
 }
